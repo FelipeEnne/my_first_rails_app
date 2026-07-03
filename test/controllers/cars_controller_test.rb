@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class CarsControllerTest < ActionDispatch::IntegrationTest
   setup do
@@ -16,7 +16,7 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create car" do
-    assert_difference('Car.count') do
+    assert_difference("Car.count") do
       post cars_url, params: { car: { make: @car.make, model: @car.model, year: @car.year } }
     end
 
@@ -39,7 +39,7 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy car" do
-    assert_difference('Car.count', -1) do
+    assert_difference("Car.count", -1) do
       delete car_url(@car)
     end
 

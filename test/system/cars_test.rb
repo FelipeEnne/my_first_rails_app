@@ -10,7 +10,7 @@ class CarsTest < ApplicationSystemTestCase
     assert_selector "h1", text: "Cars"
   end
 
-  test "creating a Car" do
+  test "should create car" do
     visit cars_url
     click_on "New Car"
 
@@ -23,8 +23,8 @@ class CarsTest < ApplicationSystemTestCase
     click_on "Back"
   end
 
-  test "updating a Car" do
-    visit cars_url
+  test "should update Car" do
+    visit car_url(@car)
     click_on "Edit", match: :first
 
     fill_in "Make", with: @car.make
@@ -36,11 +36,9 @@ class CarsTest < ApplicationSystemTestCase
     click_on "Back"
   end
 
-  test "destroying a Car" do
+  test "should destroy Car" do
     visit cars_url
-    page.accept_confirm do
-      click_on "Destroy", match: :first
-    end
+    accept_confirm { click_on "Destroy", match: :first }
 
     assert_text "Car was successfully destroyed"
   end
